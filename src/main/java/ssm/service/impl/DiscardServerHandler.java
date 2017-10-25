@@ -19,7 +19,7 @@ public class DiscardServerHandler extends ChannelInboundHandlerAdapter {
                 System.out.flush();
             }*/
         } finally {
-            //ReferenceCountUtil.release(msg); // (2)
+            ReferenceCountUtil.release(msg); // (2)
         }
 
         ctx.write(msg);

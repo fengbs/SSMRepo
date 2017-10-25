@@ -29,8 +29,10 @@ public class TimeClient {
 
             //start the client
             ChannelFuture f = b.connect(host,port).sync();
+            ChannelFuture f1 = b.connect(host,port).sync();
             //wait until the connection is closed
             f.channel().closeFuture().sync();
+            f1.channel().closeFuture().sync();
         } finally {
             workerGroup.shutdownGracefully();
         }
